@@ -1,0 +1,79 @@
+-
+  var slides = [
+    { name: '1', img: './images/slides/slide_1.jpeg' },
+    { name: '2', img: './images/slides/slide_2.jpeg' },
+    { name: '3', img: './images/slides/slide_3.jpeg' },
+    { name: '4', img: './images/slides/slide_4.jpeg' },
+    { name: '5', img: './images/slides/slide_5.jpeg' },
+    { name: '6', img: './images/slides/slide_6.jpeg' },
+    { name: '7', img: './images/slides/slide_7.jpeg' },
+    { name: '8', img: './images/slides/slide_8.jpeg' },
+    { name: '9', img: './images/slides/slide_9.jpeg' },
+    { name: '10', img: './images/slides/slide_10.jpeg' },
+    { name: '11', img: './images/slides/slide_11.jpeg' },
+    { name: '12', img: './images/slides/slide_12.jpeg' },
+    { name: '13', img: './images/slides/slide_13.jpeg' },
+    { name: '14', img: './images/slides/slide_14.jpeg' },
+    { name: '15', img: './images/slides/slide_15.jpeg' },
+    { name: '16', img: './images/slides/slide_16.jpeg' },
+    { name: '17', img: './images/slides/slide_17.jpeg' },
+    { name: '18', img: './images/slides/slide_18.jpeg' },
+    { name: '19', img: './images/slides/slide_19.jpeg' },
+    { name: '20', img: './images/slides/slide_20.jpeg' },
+    { name: '21', img: './images/slides/slide_21.jpeg' },
+  ];
+
+
+doctype html
+html
+  include ../../includes/head
+  body
+    div.preview-bg.lifestyle-bg
+      img.preview-bg--gradient(src="./images/preview-gradient.png")
+      include ../../includes/header/header
+      +header(0)
+      section.preview-content.lifestyle
+        div.lifestyle-container
+          h1.preview-title.lifestyle-title
+            span.preview-label CRAT
+            br
+            | Luxury Lifestyle
+
+          div.lifestyle-slider.glide
+            div.glide__track(data-glide-el="track")
+              ul.glide__slides
+                each slide in slides
+                  li.glide__slide.lifestyle-slider--slide
+                    img.lifestyle-slider--img(src=slide.img alt=slide.name)
+              div.lifestyle-slider--controls(data-glide-el="controls")
+                button.lifestyle-slider--control.prev(data-glide-dir="<")
+                  i.icon-chevron
+                button.lifestyle-slider--control.next(data-glide-dir=">")
+                  i.icon-chevron
+
+            div.lifestyle-slider--bullets(data-glide-el="controls[nav]")
+              each slide, index in slides
+                button.lifestyle-slider--bullet(data-glide-dir=`=${index}`)
+
+          div.container
+            p.preview-paragraph.lifestyle-description CratD2C Blockchain Protocol recently successfully signed a 31years deal in UAE for one of the CRAT Products (CRAT Luxury LifeStyle). For Luxury LifeStyle, Vacations, Resorts, Cruise, Hotels, Restaurants, Bars, CRAT Token can be used as a payment option in over 1millions destinations worldwide.
+            p.preview-paragraph.lifestyle-bonus
+              span.preview-label
+                b Fantastic bonus:
+              |  When paying with Crat Token on the CRAT LIFESTYLE LUXURY Platform, everyone gets a 20%-30% discount. This project partner has a vast network of hotels, resorts, and restaurants with over 1 million Destinations WorldWide. So you can make money and also have a great rest after work!
+            div.lifestyle-reservation
+              h3.lifestyle-reservation--title FOR RESERVATIONS & BOOKINGS, FILL THIS FORM AND CHAT WITH US LIVE
+              a.lifestyle-reservation--link(href="https://docs.google.com/forms/d/e/1FAIpQLSch3vkMcK083AWN4aduJrLi-sLBbkhu2BxMaw7eeG7HtePErw/viewform?usp=pp_url" target="_blank") Web for reservations and bookings
+
+        iframe(
+          class="preview-video"
+          src="https://www.youtube.com/embed/Kg538978WrM"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen)
+    include ../../includes/roadmap/roadmap
+    include ../../includes/footer/footer
+
+    script(src="./js/roadmap.js")
+    script(src="./js/lifestyle.js")

@@ -1,0 +1,77 @@
+.commission {
+  text-align: center;
+
+  &-bg {
+    background-image: url("../../images/commission_bg.png"), var(--gradient-preview-bg);
+    background-size: 400%;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  &-title {
+    margin-bottom: 20px;
+  }
+
+  &-prompt {
+    display: inline-block;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: var(--color-primary);
+  }
+
+  &-img {
+    display: block;
+    pointer-events: none;
+    width: 146px;
+    margin: 0 auto 30px auto;
+  }
+
+  &-description {
+    margin-bottom: 40px;
+    max-width: 700px;
+  }
+}
+
+@include for-tablet {
+  .commission {
+    &-bg {
+      background-size: 200%;
+    }
+  }
+}
+
+@include for-desktop-sm {
+  .commission {
+    &-bg {
+      background-size: 100%;
+    }
+    &-container {
+      position: relative;
+    }
+
+    &-title {
+      margin-bottom: 30px;
+    }
+
+    &-prompt {
+      margin-bottom: 40px;
+    }
+
+    &-img {
+      position: absolute;
+      right: -30px;
+      bottom: -30px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include for-desktop-big {
+  .commission {
+    &-img {
+      width: 214px;
+      right: -60px;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+-
+  var tabs = [
+    {
+      label: 'CRAT Luxury Lifestyle',
+      to: 'lifestyle.html',
+    },
+    {
+      label: 'CRAT Yield Farming: STAKING',
+      to: 'staking.html',
+    },
+    {
+      label: 'CRAT Reflect Commission',
+      to: 'reflect_commission.html',
+    },
+    {
+      label: 'CratD2C E-commerce Platform',
+      to: 'e_commerce.html',
+      withComingSoonLabel: true,
+    },
+  ]
+
+mixin header(activeIndex)
+  header.header
+    div.container.header-content
+      div.header-logo
+        a(href="/")
+          img.header-logo--img(src="./images/logo.svg" alt="Crat")
+      nav.header-nav
+        each tab, index in tabs
+          a(href=tab.to class=`header-nav--link ${activeIndex === index ? 'active' : ''}`)
+            span(class="header-nav--link-content")= tab.label
+              if tab.withComingSoonLabel
+                span.header-nav--link-label Coming soon!
+

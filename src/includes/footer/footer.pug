@@ -1,0 +1,46 @@
+-
+  var socials = [
+    {
+      icon: 'twitter',
+      to: 'https://twitter.com/crat_d2c',
+    },
+    {
+      icon: 'instagram',
+      to: 'https://instagram.com/crat_d2c',
+    },
+    {
+      icon: 'discord',
+      to: 'https://discord.gg/vsAuKGMfJ3',
+    },
+    {
+      icon: 'facebook',
+      to: 'https://www.facebook.com/people/Crat-Tokenomics/100072754416731/',
+    },
+    {
+      icon: 'telegram',
+      to: 'https://t.me/joinchat/vcgwPoaiXy84ZDlk',
+    },
+    {
+      icon: 'linkedin',
+      to: 'https://www.linkedin.com/in/cratd2c-tokenomics-233438220/',
+    },
+  ];
+
+
+footer.footer
+  img.footer-gradient(src="./images/footer-gradient.png" alt="Crat")
+  div.footer-content
+    div.container
+      div.footer-links
+        a.footer-links--link(href="https://cratprotocol.io/whitepaper/" target="_blank") Litepaper
+        a.footer-links--link(href="https://github.com/samaros/CRAT-SMART-CONTRACT" target="_blank") Github
+      ul.footer-social
+        each link in socials
+          li.footer-social--item
+            a.footer-social--link(href=link.to target="_blank")
+              i(class=`icon-${link.icon}`)
+      div.footer-developer
+        a.footer-developer--link(href="https://rocknblock.io/" target="_blank")
+           img.footer-developer--img(src="./images/developer.png")
+      p.footer-copyright CRAT © 2021 All rights reserved.
+

@@ -1,0 +1,153 @@
+.footer {
+  padding-top: 10px;
+  position: relative;
+  overflow: hidden;
+  // To remove the gap between blocks
+  margin-top: -1px;
+  background-color: var(--secondary-block-bg);
+}
+
+.footer-content {
+  position: relative;
+  padding: 15px 0 30px 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: var(--bg-mobile-card);
+}
+
+.footer-gradient {
+  display: none;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  &--link {
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: var(--transition-default-ms) transform;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+
+  &--item {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &--link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 14px;
+    color: var(--color-light);
+    background-color: var(--color-secondary);
+    transition: var(--transition-default-ms) background-color;
+
+    &:hover {
+      background-color: var(--color-secondary-darken);
+    }
+  }
+}
+
+.footer-developer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+
+  &--img {
+    width: 110px;
+  }
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+@include for-phone-big {
+  .footer-social--item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .footer-social--link {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+}
+
+@include for-desktop-sm {
+  .footer {
+    background-color: transparent;
+  }
+
+  .footer-content {
+    padding: 0 0 10px 0;
+    background-color: transparent;
+  }
+
+  .footer-gradient {
+    display: block;
+    position: absolute;
+    transform: translateX(50%);
+    right: 50%;
+    bottom: -30%;
+    z-index: 0;
+  }
+
+  .footer-links {
+    margin-bottom: 45px;
+  }
+
+  .footer-developer {
+    justify-content: flex-end;
+    margin-bottom: 30px;
+  }
+
+  .footer-social {
+    margin-bottom: 5px;
+
+    &--link {
+      width: 36px;
+      height: 36px;
+      font-size: 14px;
+    }
+
+    &:before, &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: auto;
+      flex-grow: 1;
+      background-color: var(--color-secondary);
+    }
+
+    &:before {
+      margin-right: 15px;
+    }
+    &:after {
+      margin-left: 15px;
+    }
+  }
+}

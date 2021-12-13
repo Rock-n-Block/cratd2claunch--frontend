@@ -1,0 +1,16 @@
+doctype html
+html
+  include ../../includes/head
+  body
+    div.preview-bg.ecommerce-bg
+      img.preview-bg--gradient(src="./images/preview-gradient.png")
+      include ../../includes/header/header
+      +header(3)
+      section.preview-content.ecommerce
+        div.container.ecommerce-content
+          h1.ecommerce-title Coming soon!
+          img.ecommerce-img(src="./images/basket_money.png" alt="Basket money")
+    section.ecommerce-empty
+      img.ecommerce-desktop-img(src="./images/basket_money.png" alt="Basket money")
+
+    include ../../includes/footer/footer

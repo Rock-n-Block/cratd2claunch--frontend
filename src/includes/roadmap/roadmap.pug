@@ -1,0 +1,72 @@
+-
+  var steps = [
+    {
+      name: 'Q3-Q4',
+      year: '2021',
+      description: 'ITO (Private and Public)\n' +
+              'CRAT Luxury LifeStyle Platform Development \n' +
+              '3-5 Public Exchange Listing \n' +
+              'CRAT L.L Product Launch ',
+    },
+    {
+      name: 'Q1',
+      year: '2022',
+      description: 'Manufacturers Listing',
+    },
+    {
+      name: 'Q1-Q2',
+      year: '2022',
+      description: 'CratD2C E-commerce Platform Development',
+    },
+    {
+      name: 'Q2',
+      year: '2022',
+      description: 'Community Exchange\n' +
+              'Platform Development',
+    },
+    {
+      name: 'Q3',
+      year: '2022',
+      description: 'The Official Launch of CratD2C E-commerce Trading Platform',
+    },
+    {
+      name: 'Q3',
+      year: '2022',
+      description: 'The Official Launch of Community Exchange Platform',
+    },
+    {
+      name: 'Q4',
+      year: '2022',
+      description: 'Integration and Deployment of Restaurants, Bars, Hotels, Shopping Malls, and others Services on CratD2C Blockchain Ecosystem for Wider Acceptability of CRAT Token.',
+    },
+    {
+      name: 'Q4',
+      year: '2022',
+      description: 'More CRAT Token Public Listing',
+    },
+    {
+      name: 'Q4',
+      year: '2022',
+      description: 'Further Deployment & Listing of More Manufacturers on CratD2C E-commerce Platform',
+    },
+    {
+      name: 'Q1-Q4',
+      year: '2023 & Beyond',
+      description: 'Collaboration of World Existing E-commerce Platforms with CratD2C Blockchain Ecosystem',
+      isActive: true,
+    },
+  ];
+
+section.roadmap
+  img.roadmap-img(src="./images/roadmap.png" alt="Roadmap")
+  div.roadmap-slider
+    h3.roadmap-slider--title Roadmap
+    div.roadmap-slider--glide.glide
+      div.glide__track(data-glide-el="track")
+        ul.glide__slides
+          each step in steps
+            li(class=`glide__slide step ${step.isActive ? 'active' : ''}`)
+              span.step-circle
+              span.step-name= step.name
+              span.step-year= step.year
+              p.step-description= step.description

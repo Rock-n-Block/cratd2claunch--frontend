@@ -1,0 +1,66 @@
+-
+  var cards = [
+    {
+      month: '1 month',
+      percent: '3.5%',
+      description: 'Payout Reward at the end of staking period',
+    },
+    {
+      month: '3 months',
+      percent: '4%',
+      description: 'Monthly for three straight months, 12% Payout Reward at the end of staking period',
+    },
+    {
+      month: '6 months',
+      percent: '4.5%',
+      description: 'Monthly for six consecutive months, 27% Payout Reward at the end of the staking period. ',
+    },
+    {
+      month: '12 months',
+      percent: '5%',
+      description: 'Monthly for twelve straight months, 60% Payout Reward at the end of the staking period. ',
+    },
+  ];
+
+doctype html
+html
+  include ../../includes/head
+  body
+    div.preview-bg.staking-bg
+      img.preview-bg--gradient(src="./images/preview-gradient.png")
+      include ../../includes/header/header
+      +header(1)
+      section.preview-content.staking
+        div.container.staking-container
+          h1.preview-title.staking-title
+            span.preview-label CRAT Yield Farming
+            br
+            | (STAKING)
+          img.staking-img(src="./images/money_flower.png" alt="Money bag")
+          p.preview-paragraph.staking-description CRAT yield farming protocol incentivizes rewards with 4-PLANS (Monthly, Quarterly, Half Yearly, & Yearly. CRAT is staked and locked up within these plans in a CRAT Blockchain Smart Contract. The following REWARDS and PAYOUT is automated with the smart contract at the expiration of the Staking Period.
+
+          ul.staking-cards
+            each card in cards
+              li.staking-card
+                span.staking-card--month= card.month
+                span.staking-card--percent= card.percent
+                p.staking-card--description= card.description
+
+          div.staking-preview
+            h3.staking-preview--title THE MORE CRAT TOKENS STAKED ..., THE MORE MONEY TO BE MADE
+              span.staking-preview--title-emoji &#128176;
+
+            a.staking-preview--link(href="https://cratprotocol.io/" target="_blank") Stake CRAT TOKEN
+
+
+        iframe(
+          class="preview-video"
+          src="https://www.youtube.com/embed/Kg538978WrM"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen)
+    include ../../includes/roadmap/roadmap
+    include ../../includes/footer/footer
+
+    script(src="./js/roadmap.js")

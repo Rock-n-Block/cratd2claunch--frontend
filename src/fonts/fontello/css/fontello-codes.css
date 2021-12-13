@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.icon-discord:before { content: '\e803'; } /* '' */
+.icon-twitter:before { content: '\e805'; } /* '' */
+.icon-linkedin:before { content: '\e806'; } /* '' */
+.icon-telegram:before { content: '\e807'; } /* '' */
+.icon-instagram:before { content: '򐷸'; } /* '\90df8' */
+.icon-facebook:before { content: '򐷹'; } /* '\90df9' */
+.icon-share:before { content: '򐷺'; } /* '\90dfa' */
+.icon-hotel:before { content: '򐷻'; } /* '\90dfb' */
+.icon-chevron:before { content: '򐷼'; } /* '\90dfc' */

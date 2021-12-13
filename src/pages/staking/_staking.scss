@@ -1,0 +1,187 @@
+.staking-container {
+  position: relative;
+}
+
+.staking-title {
+  margin-bottom: 25px;
+}
+
+.staking-bg {
+  background-image: var(--gradient-preview-bg);
+}
+
+.staking-img {
+  display: block;
+  width: 94px;
+  margin: 0 auto 10px auto;
+  pointer-events: none;
+}
+
+.staking-description {
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.staking-cards {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  overflow: auto;
+  padding-bottom: 5px;
+
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparentize(#000, 0.6);
+    border-radius: 10px;
+  }
+}
+
+.staking-card {
+  flex-basis: 210px;
+  flex-shrink: 0;
+  padding: 15px;
+  border: 3px solid var(--color-light);
+  border-radius: 20px;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &--month {
+    display: block;
+    color: var(--color-light);
+    line-height: 170%;
+    font-weight: 700;
+  }
+
+  &--percent {
+    color: var(--color-primary);
+    font-size: 40px;
+    line-height: 52px;
+    font-weight: 700;
+  }
+
+  &--description {
+    color: var(--color-light);
+    font-size: 18px;
+    line-height: 170%;
+  }
+}
+
+.staking-preview {
+  margin-bottom: 30px;
+
+  &--title {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: var(--color-primary);
+    font-size: 35px;
+    line-height: 119%;
+    text-align: center;
+
+    &-emoji {
+      font-family: apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol;
+      font-weight: 400;
+    }
+  }
+
+  &--link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 370px;
+    padding: 25px 0;
+    margin: 0 auto;
+
+    font-size: 24px;
+    text-transform: uppercase;
+    background: linear-gradient(121.78deg, #FFE39D -24.33%, #FFB700 81.32%);
+    border-radius: 40px;
+    transition: var(--transition-default-ms) transform;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 42px;
+      height: 42px;
+      margin-right: 10px;
+      background-image: url("../../images/money_bag.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+@include for-tablet-big {
+  .staking-cards {
+    justify-content: center;
+  }
+
+  .staking-card {
+    flex-basis: calc(25% - (25px * 3 / 4));
+
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+}
+
+@include for-desktop-sm {
+  .staking-bg {
+    background-image: url("../../images/staking-bg.png"), var(--gradient-preview-bg);
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  .staking-title {
+    margin-bottom: 40px;
+  }
+
+  .staking-description {
+    margin-bottom: 70px;
+  }
+
+  .staking-img {
+    width: 154px;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    margin-bottom: 0;
+  }
+
+  .staking-cards {
+    margin-bottom: 80px;
+  }
+
+  .staking-preview {
+    &--title {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@include for-desktop-big {
+  .staking-img {
+    right: -2%;
+  }
+}

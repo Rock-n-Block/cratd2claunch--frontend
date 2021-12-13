@@ -1,0 +1,138 @@
+@import "./mixins";
+@import "./normalize";
+@import "./fonts";
+@import "./fontello";
+
+@import "../includes/header/header";
+@import "../includes/footer/footer";
+@import "../includes/roadmap/roadmap";
+@import "../pages/main/main";
+@import "../pages/reflect_commission/reflect_commission";
+@import "../pages/e_commerce/ecommerce";
+@import "../pages/staking/staking";
+@import "../pages/lifestyle/lifestyle";
+
+:root {
+  --color-primary: #FFCF55;
+  --color-secondary: #269653;
+  --color-secondary-darken: #25834B;
+  --color-dark: #5A4A4A;
+  --color-light: #FFF;
+  --secondary-block-bg: #37995e;
+  --gradient-preview-bg: linear-gradient(180deg, #269653 0%, var(--secondary-block-bg) 100%);
+  --bg-mobile-card: rgba(248, 248, 248, 1);
+  --transition-default-ms: 0.2s;
+}
+
+// fix fontello width
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  width: auto;
+}
+
+.container {
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include for-desktop {
+    width: 100%;
+    max-width: 1180px;
+  }
+}
+
+.preview {
+  &-content {
+    padding-bottom: 10px;
+  }
+
+  &-bg {
+    position: relative;
+    &--gradient {
+      display: none;
+    }
+  }
+
+  &-title {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--color-light);
+    line-height: 120%;
+    text-align: center;
+  }
+
+  &-label {
+    color: var(--color-primary);
+  }
+
+  &-description, &-paragraph {
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-light);
+    font-size: 18px;
+    line-height: 170%;
+    text-align: center;
+  }
+
+  &-video {
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include for-tablet {
+    &-video {
+      height: 400px;
+    }
+  }
+
+  @include for-tablet-big {
+    &-video {
+      height: 480px;
+    }
+  }
+
+  @include for-desktop-sm {
+    &-content {
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+
+    &-video {
+      height: 650px;
+    }
+
+    &-bg {
+      overflow: hidden;
+
+      &--gradient {
+        display: block;
+        width: 800px;
+        height: 800px;
+        position: absolute;
+        right: -300px;
+        top: -400px;
+        pointer-events: none;
+      }
+    }
+
+    &-title {
+      font-size: 60px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &-description {
+      font-size: 28px;
+    }
+
+    &-paragraph {
+      font-size: 22px;
+    }
+  }
+}
