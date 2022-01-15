@@ -41,7 +41,7 @@
 
 @include for-desktop-sm {
   .real-estate--bg {
-    background-image: url(../../images/real-estate-bg.png), var(--gradient-preview-bg);
+    background-image: url(../../images/real-estate-bg.png), linear-gradient(180deg, #269653 0%, #138F45 100%);
     background-repeat: no-repeat;
     background-position: top center;
   }

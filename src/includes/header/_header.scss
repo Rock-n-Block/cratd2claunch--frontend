@@ -1,3 +1,7 @@
+.header {
+  margin-bottom: 20px;
+}
+
 .header-content.container {
   width: 100%;
 }
@@ -75,6 +79,7 @@
 @include for-desktop-sm {
   .header {
     padding: 20px 30px;
+    margin-bottom: 0;
 
     .header-content {
       width: 100%;
@@ -155,9 +160,5 @@
     .header-content {
       width: 100%;
     }
-  }
-
-  .header-logo {
-    margin-right: 50px;
   }
 }
