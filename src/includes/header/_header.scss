@@ -23,9 +23,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px;
   overflow: auto;
 
   &--link {
@@ -100,8 +100,7 @@
 
   .header-nav {
     align-items: stretch;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
     width: 100%;
     overflow: visible;
   }
