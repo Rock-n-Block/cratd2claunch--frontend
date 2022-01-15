@@ -32,6 +32,7 @@
 }
 
 .real-estate--subdescription {
+  margin-bottom: 20px;
   text-align: center;
   font-size: 18px;
   font-weight: 400;
@@ -39,15 +40,18 @@
   color: var(--color-light);
 }
 
+.real-estate--promo {
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
 @include for-desktop-sm {
   .real-estate--bg {
     background-image: url(../../images/real-estate-bg.png), linear-gradient(180deg, #269653 0%, #138F45 100%);
     background-repeat: no-repeat;
     background-position: top center;
-  }
-
-  .real-estate--content.preview-content {
-    padding-bottom: 150px;
   }
 
   .real-estate--title {
@@ -66,5 +70,9 @@
   .real-estate--subdescription {
     font-size: 22px;
     line-height: 38px;
+  }
+
+  .real-estate--promo {
+    font-size: 22px;
   }
 }
