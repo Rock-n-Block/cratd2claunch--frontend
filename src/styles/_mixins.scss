@@ -39,3 +39,46 @@
     @content;
   }
 }
+
+
+@mixin for-desktop-big-max {
+  @media screen and (max-width: 1559.99px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-max {
+  @media screen and (max-width: 1279.99px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-sm-max {
+  @media screen and (max-width: 979.99px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-big-max {
+  @media screen and (max-width: 719.99px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-max {
+  @media screen and (max-width: 639.99px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-sm-max {
+  @media screen and (max-width: 479.99px) {
+    @content;
+  }
+}
+
+@mixin for-phone-big-max {
+  @media screen and (max-width: 399.99px) {
+    @content;
+  }
+}

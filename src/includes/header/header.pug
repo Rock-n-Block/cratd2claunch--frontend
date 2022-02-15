@@ -1,43 +1,83 @@
 -
   var tabs = [
     {
-      label: 'CRAT Luxury Lifestyle',
-      to: 'lifestyle.html',
+      name:'Buy Directly from Manufacturers with CRAT',
+      content:[{
+        label: 'CratD2C E-Commerce Platform',//'CRAT Luxury Lifestyle',
+        to:'e_commerce.html'// 'lifestyle.html',
+      }],
     },
     {
-      label: 'CRAT Yield Farming: STAKING',
-      to: 'staking.html',
+      name: 'Own a Home with CRAT',
+      content:[{
+        label: 'CRAT Real Estate Platform',//'CRAT Yield Farming: STAKING',
+        to:'real_estate.html',// 'staking.html',
+        withComingSoonLabel: true,
+      }],
     },
     {
-      label: 'CRAT Reflect Commission',
-      to: 'reflect_commission.html',
+      name:'Enjoy the Moments of Life with CRAT',
+      content:[{
+        label:'CRAT Luxury Lifestyle', //'CRAT Reflect Commission',
+        to:'lifestyle.html' //'reflect_commission.html',
+      }],
     },
     {
-      label: 'CratD2C E-commerce Platform',
-      to: 'e_commerce.html',
-      withComingSoonLabel: true,
+      name:'Earn with CRAT',
+      content:[
+        {
+          label:'CRAT Yield Farming (STAKING)',// 'CratD2C E-commerce Platform',
+          to:'staking.html'// 'e_commerce.html',
+        },
+        {
+          label:'CRAT Reflect Commission',// 'CratD2C E-commerce Platform',
+          to: 'reflect_commission.html',
+        },
+        {
+          label:'CRAT Ambassadorial System',
+          to: 'partners.html',
+        },
+      ]
     },
-    {
-      label: 'CratD2C Real Estate Platform',
-      to: 'real_estate.html',
-      withComingSoonLabel: true,
-    },
-    {
-      label: 'PARTNERS',
-      to: 'partners.html',
-    },
+    // {
+    //   label: 'CratD2C Real Estate Platform',
+    //   to: 'real_estate.html',
+    //   withComingSoonLabel: true,
+    // },
+    // {
+    //   label: 'PARTNERS',
+    //   to: 'partners.html',
+    // },
   ]
+
+mixin dropdown(name,content,isActive)
+  div(class=`dropdown ${isActive?'active':''}`)
+    p(class=`dropdown-title `)=name
+    ul.dropdown-content
+      each tab in content
+        li.dropdown-element
+          a(href=tab.to class=`dropdown-element--link`)
+            span(class="dropdown--link-content")= tab.label
 
 mixin header(activeIndex)
   header.header
-    div.container.header-content
-      div.header-logo
-        a(href="/")
-          img.header-logo--img(src="./images/logo.svg" alt="Crat")
+    div.container.header-desktop.header-content
+      a(href="/").header-logo
+        img.header-logo--img(src="./images/logo.svg" alt="Crat")
       nav.header-nav
         each tab, index in tabs
-          a(href=tab.to class=`header-nav--link ${activeIndex === index ? 'active' : ''}`)
-            span(class="header-nav--link-content")= tab.label
-              if tab.withComingSoonLabel
-                span.header-nav--link-label Coming soon!
-
+          +dropdown(tab.name,tab.content,activeIndex,index)
+    div.container.header-mobile.header-content
+      input(id='menu__toggle' type='checkbox', (click)='changeBodyOverflow()')
+      label.menu__btn(for='menu__toggle')
+        span
+      a(href="/").header-logo
+        img.header-logo--img(src="./images/logo.svg" alt="Crat" width=98 height=41)
+      div.menu__box
+        a(href="/").header-logo
+          img.header-logo--img(src="./images/logo.svg" alt="Crat" width=98 height=41)
+        nav.header-nav
+          each tab, index in tabs
+            -
+              var isActive=activeIndex===index;
+            +dropdown(tab.name,tab.content,isActive)

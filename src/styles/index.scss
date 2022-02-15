@@ -25,7 +25,9 @@
   --bg-mobile-card: rgba(248, 248, 248, 1);
   --transition-default-ms: 0.2s;
 }
-
+html,body{
+  height: 100%;
+}
 // fix fontello width
 [class^="icon-"]:before, [class*=" icon-"]:before {
   width: auto;
