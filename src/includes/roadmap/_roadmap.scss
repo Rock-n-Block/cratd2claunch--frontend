@@ -3,6 +3,8 @@
   // To remove the gap between blocks
   margin-top: -1px;
   background-color: var(--secondary-block-bg);
+  //removing horizontal scroll
+  overflow: hidden;
 }
 
 .roadmap-img {
