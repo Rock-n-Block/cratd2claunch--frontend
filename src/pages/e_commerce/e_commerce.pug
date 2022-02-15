@@ -1,3 +1,37 @@
+-
+  var advantages1 = [
+    {
+      img:'./images/advantages-icons/icon-1.svg',
+      text:'Consumers\' assurance for quality products with direct access to the manufacturer of their desired goods'
+    },
+    {
+      img:'./images/advantages-icons/icon-2.svg',
+      text:'The best prices for goods and services are guaranteed at low transaction costs. '
+    },
+    {
+      img:'./images/advantages-icons/icon-3.svg',
+      text:'Seamless payment system. The digital asset utility token (CRAT) makes payment transparently with the CratD2C Blockchain Protocol. '
+    },
+    {
+      img:'./images/advantages-icons/icon-4.svg',
+      text:'Satisfactory customer service for all issues and enquiries. The consumer\'s rights are secured and protected with the application of the escrow protocol.'
+    },
+  ];
+  var advantages2 = [
+    {
+      img:'./images/advantages-icons/icon-5.svg',
+      text:'Unbeaten reward system for anyone transacting on the platform. The manufacturers get a reward for selling their goods and services on the E-commerce trading platform. The buyers also receive compensation for the goods and services they procure. '
+    },
+    {
+      img:'./images/advantages-icons/icon-6.svg',
+      text:'The use of a lingua service channel necessitates accessible communication and reduces the language barrier in the marketplace. In addition, there\'s no barrier to location, as individuals from various parts of the world can converge and exchange goods and services on one single platform (CratD2C E-commerce Trading Platform).'
+    },
+    {
+      img:'./images/advantages-icons/icon-7.svg',
+      text:'Manufacturers\' protection rights mean a lot. The CratD2C E-commerce Trading Platform  gives a range of additional services with the compliment of free ads for goods and services that are published constantly on the trading platform'
+    },
+  ];
+
 doctype html
 html
   include ../../includes/head
@@ -7,10 +41,46 @@ html
       include ../../includes/header/header
       +header(0)
       section.preview-content.ecommerce
-        div.container.ecommerce-content
-          h1.ecommerce-title Coming soon!
-          img.ecommerce-img(src="./images/basket_money.png" alt="Basket money")
-    section.ecommerce-empty
-      img.ecommerce-desktop-img(src="./images/basket_money.png" alt="Basket money")
+        div.container.ecommerce__content
+          section.ecommerce__about
+            h1.ecommerce__title-main
+              span='CratD2C'
+              br
+              | Ecommerce
+              br
+              | Trading Platform
+            p.ecommerce__description
+              | Buying and selling on the virtual marketplace has never been better! E-commerce transactions now have a new niche with the emergence and integration of the CratD2C Blockchain-based all-in-one marketplace that connects manufacturers directly to consumers.
+              |
+              | The CratD2C Blockchain Protocol serves as a medium for the most straightforward E-trade mechanism. Consumers connect directly to the manufacturers of their desired goods and services using the Blockchain distributed ledger technology with the state-of-the-art sales, purchase, and reward system.
+            img.ecommerce__img(src="./images/basket_money.png" alt="Basket money" width='683' height='578')
+          section.ecommerce__section.ecommerce__why
+            h2.ecommerce__title
+              span.ecommerce__title-yellow='Why is CratD2C the choicest'
+              | E-commerce trading platform?
+            p.ecommerce__why-description='The consumer is guaranteed to have direct access to goods and services from the manufacturers of these products, which reduces retailer bureaucracy in the realism of the Direct-2-Consumer Economy.'
+          section.ecommerce__section.ecommerce__advantages
+            h2.ecommerce__title
+              span.ecommerce__title-yellow='Advantages of the CratD2C'
+              | E-commerce platform?
+            div.ecommerce__advantages-container
+              each advantage in advantages1
+                div.ecommerce__advantage.advantage
+                  div.advantage__img-container
+                    img.advantage__img(src=advantage.img width=32 height=32 alt='advantage icon')
+                  p.advantage__text=advantage.text
+            div.ecommerce__advantages-container
+              each advantage in advantages2
+                div.ecommerce__advantage.advantage
+                  div.advantage__img-container
+                    img.advantage__img(src=advantage.img width=32 height=32 alt='advantage icon')
+                  p.advantage__text=advantage.text
+          section.ecommerce__section.ecommerce__getlisted
+            h2.ecommerce__title
+              span.ecommerce__title-yellow='GET LISTED AS A MANUFACTURER ON'
+              | CratD2C E-COMMERCE TRADING PLATFORM
+            div.ecommerce__getlisted-content
+              a.ecommerce__getlisted-btn(href='https://docs.google.com/forms/d/e/1FAIpQLSeqjJHFBD4WHF7YbYYjQ0dWrjTevFPdg54-JF0W9JYECo0eAQ/viewform' target='_blank' rel='noopener norefferer')
+                | get listed
 
     include ../../includes/footer/footer

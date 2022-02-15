@@ -1,18 +1,135 @@
 .ecommerce {
   position: relative;
-}
+  color:#FFFFFF;
+  font-family: 'IBM',sans-serif;
+  & .container{
+    max-width:1100px;
+  }
+  &__about{
+    position: relative;
+  }
+  &__title-main{
+    position: relative;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 120%;
+    text-align: left;
+    z-index: 1;
+    span{
+      color: var(--color-primary);
+    }
+  }
+  &__description{
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 570px;
+    font-size: 18px;
+    line-height: 170%;
+    z-index: 1;
+  }
+  &__img{
+    position: absolute;
+    top: 0;
+    right: -100px;
+    z-index: 0;
+  }
+  &__section{
 
+  }
+  &__title{
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 120%;
+    text-align: center;
+    text-transform: uppercase;
+    &-yellow{
+      color: var(--color-primary);
+    }
+  }
+  &__why{
+    &-description{
+      margin: 30px auto 0;
+      text-align: center;
+      font-size: 18px;
+      line-height: 170%;
+      width: 100%;
+      max-width: 800px;
+    }
+  }
+  &__advantages{
+    &-container{
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+      .advantage{
+        max-width: 240px;
+      }
+      &:last-child{
+        margin-top: 94px;
+        .advantage{
+          max-width: 320px;
+        }
+      }
+    }
+  }
+  &__getlisted{
+    &-content{
+      position: relative;
+      margin: 70px 0 90px;
+      display: flex;
+      justify-content: center;
+      &::after{
+        content: url("../../images/get-listed-light.png");
+        position: absolute;
+        height: auto;
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%,-50%);
+      }
+    }
+    &-btn{
+      padding: 24px 90px;
+      background: linear-gradient(121.78deg, #FFE39D -24.33%, #FFB700 81.32%);
+      border: 2px solid #FFFFFF;
+      border-radius: 40px;
+      font-size: 24px;
+      line-height: 31px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #5A4A4A;
+      z-index: 1;
+    }
+  }
+}
+.advantage{
+  &__img{
+    &-container{
+      background: linear-gradient(121.78deg, #FFE39D -24.33%, #FFB700 81.32%);
+      border: 2px solid #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+    }
+  }
+  &__text{
+    margin-top: 20px;
+  }
+}
 .ecommerce-bg {
-  background-color: var(--secondary-block-bg);
-}
-
-.ecommerce-title {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  font-size: 40px;
-  color: var(--color-primary);
-  text-align: center;
+  background:url('../../images/ecommerce-bg.png'), var(--color-secondary);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .ecommerce-img {
@@ -22,51 +139,7 @@
   margin: 0 auto;
 }
 
-.ecommerce-empty {
-  display: none;
-}
-
 .ecommerce-desktop-img {
   display: none;
 }
 
-@include for-desktop-sm {
-  .ecommerce-bg {
-    background-image: url("../../images/ecommerce-bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .ecommerce-footer {
-    background-color: transparent;
-  }
-
-  .ecommerce-content {
-    padding-bottom: 450px;
-  }
-
-  .ecommerce-title {
-    font-size: 70px;
-  }
-
-  .ecommerce-empty {
-    display: block;
-    position: relative;
-    height: 350px;
-  }
-
-  .ecommerce-img {
-    display: none;
-  }
-
-  .ecommerce-desktop-img {
-    display: block;
-    position: absolute;
-    bottom: 55%;
-    left: calc(50% - 375px);
-    right: 0;
-    width: 730px;
-    pointer-events: none;
-  }
-}
