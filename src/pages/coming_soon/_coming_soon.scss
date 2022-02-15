@@ -1,0 +1,72 @@
+.comingsoon {
+  position: relative;
+}
+
+.comingsoon-bg {
+  background-color: var(--secondary-block-bg);
+}
+
+.comingsoon-title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 40px;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.comingsoon-img {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.comingsoon-empty {
+  display: none;
+}
+
+.comingsoon-desktop-img {
+  display: none;
+}
+
+@include for-desktop-sm {
+  .comingsoon-bg {
+    background-image: url("../../images/ecommerce-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .comingsoon-footer {
+    background-color: transparent;
+  }
+
+  .comingsoon-content {
+    padding-bottom: 450px;
+  }
+
+  .comingsoon-title {
+    font-size: 70px;
+  }
+
+  .comingsoon-empty {
+    display: block;
+    position: relative;
+    height: 350px;
+  }
+
+  .comingsoon-img {
+    display: none;
+  }
+
+  .comingsoon-desktop-img {
+    display: block;
+    position: absolute;
+    bottom: 55%;
+    left: calc(50% - 375px);
+    right: 0;
+    width: 730px;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,16 @@
+doctype html
+html
+  include ../../includes/head
+  body
+    div.preview-bg.comingsoon-bg
+      img.preview-bg--gradient(src="./images/preview-gradient.png")
+      include ../../includes/header/header
+      +header(0)
+      section.preview-content.comingsoon
+        div.container.comingsoon-content
+          h1.comingsoon-title Coming soon!
+          img.comingsoon-img(src="./images/basket_money.png" alt="Basket money")
+    section.comingsoon-empty
+      img.comingsoon-desktop-img(src="./images/basket_money.png" alt="Basket money")
+
+    include ../../includes/footer/footer
