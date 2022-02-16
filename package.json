@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "gulp",
+    "start": "node dist/index.js",
+    "postinstall": "gulp default",
+    "startDev": "gulp",
     "build": "gulp build",
     "fontello": "bash ./fontello.sh"
   },
