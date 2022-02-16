@@ -35,7 +35,6 @@ html
     script.
       const checkbox = document.getElementById('menu__toggle');
       checkbox.addEventListener('change', function (e) {
-        console.log(e.target.checked);
         const checkboxElem=e.target;
         if (checkboxElem.checked) {
           document.body.style.overflow = 'hidden';

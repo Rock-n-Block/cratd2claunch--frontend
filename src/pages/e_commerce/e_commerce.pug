@@ -57,7 +57,6 @@ html
                 const basket = document.getElementById('basket');
                 function updateScroll() {
                   const scrollY = +window.pageYOffset / 7;
-                  console.log(scrollY / 7);
                   basket.style.transform = `translateY(${scrollY}px`;
                 }
                 window.addEventListener('scroll', updateScroll);
