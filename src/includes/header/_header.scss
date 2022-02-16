@@ -175,6 +175,16 @@
     }
   }
 }
+@include for-desktop-max{
+  .header{
+    &-desktop{
+      display: none;
+    }
+    &-mobile{
+      display: flex;
+    }
+  }
+}
 //burger
 #menu__toggle {
   display: none;
