@@ -9,6 +9,10 @@
     "build": "gulp build",
     "fontello": "bash ./fontello.sh"
   },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tigfamon/CRAT.git"
