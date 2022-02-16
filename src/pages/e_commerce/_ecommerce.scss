@@ -2,13 +2,29 @@
   position: relative;
   color:#FFFFFF;
   font-family: 'IBM',sans-serif;
+  padding-bottom:0 !important;
+  overflow: hidden;
+
+  &__content{
+  }
   & .container{
     max-width:1100px;
+    @include for-tablet-big-max{
+      padding: 20px;
+    }
   }
   &__about{
     position: relative;
+    @include for-desktop-sm-max{
+      .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   }
   &__title-main{
+    max-width: 550px;
     position: relative;
     font-style: normal;
     font-weight: bold;
@@ -16,6 +32,15 @@
     line-height: 120%;
     text-align: left;
     z-index: 1;
+
+    @include for-desktop-sm-max{
+      text-align: center;
+      font-size: 45px;
+    }
+
+    @include for-tablet-big-max{
+      font-size: 30px;
+    }
     span{
       color: var(--color-primary);
     }
@@ -34,12 +59,15 @@
     top: 0;
     right: -100px;
     z-index: 0;
+    @include for-desktop-sm-max{
+      all: unset;
+      max-width: 100%;
+    }
   }
   &__section{
-
+    margin-top: 140px;
   }
   &__title{
-    margin-top: 140px;
     display: flex;
     flex-direction: column;
     font-weight: bold;
@@ -47,11 +75,16 @@
     line-height: 120%;
     text-align: center;
     text-transform: uppercase;
+
+    @include for-tablet-big-max{
+      font-size: 30px;
+    }
     &-yellow{
       color: var(--color-primary);
     }
   }
   &__why{
+    background: linear-gradient(270deg, #269653 0%, rgba(38, 150, 83, 0) 100%);
     &-description{
       margin: 30px auto 0;
       text-align: center;
@@ -68,13 +101,34 @@
       justify-content: space-between;
       gap: 20px;
       width: 100%;
+      @include for-tablet-big-max{
+        flex-direction: column;
+      }
+      @include for-tablet-big-max{
+        max-width: unset;
+        display: flex;
+        gap: 30px;
+      }
       .advantage{
         max-width: 240px;
+        @include for-tablet-big-max{
+          max-width: unset;
+          display: flex;
+          gap: 20px;
+        }
       }
       &:last-child{
         margin-top: 94px;
         .advantage{
           max-width: 320px;
+
+          @include for-tablet-big-max{
+            max-width: unset;
+          }
+        }
+
+        @include for-tablet-big-max{
+          margin-top: 30px;
         }
       }
     }
@@ -82,16 +136,37 @@
   &__getlisted{
     &-content{
       position: relative;
-      margin: 70px 0 90px;
+      margin-top: 70px;
+      margin-bottom: -3px;
+      padding: 0 0 90px;
       display: flex;
       justify-content: center;
+      background-color: #FFFFFF;
+      @include for-desktop-sm-max{
+        background:var(--color-secondary);
+      }
+      &::before{
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        top: -1px;
+        background: url("../../images/e-commerce-footer.png");
+        background-size: 102% 100%;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        @include for-desktop-sm-max{
+          content: unset;
+        }
+      }
       &::after{
         content: url("../../images/get-listed-light.png");
         position: absolute;
         height: auto;
         left: 50%;
         top: 100%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%,-100%);
       }
     }
     &-btn{
@@ -106,6 +181,12 @@
       color: #5A4A4A;
       z-index: 1;
     }
+
+    //&::after{
+    //  content: url("../../images/e-commerce-footer.png");
+    //  height: 173px;
+    //  width: 100%;
+    //}
   }
 }
 .advantage{
@@ -119,14 +200,19 @@
       justify-content: center;
       width: 64px;
       height: 64px;
+
+      flex-shrink: 0;
     }
   }
   &__text{
     margin-top: 20px;
+    @include for-tablet-big-max{
+      margin-top: 0;
+    }
   }
 }
 .ecommerce-bg {
-  background:url('../../images/ecommerce-bg.png'), var(--color-secondary);
+  background:url('../../images/ecommerce-bg.png'),var(--color-secondary);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top center;
