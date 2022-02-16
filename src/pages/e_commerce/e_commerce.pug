@@ -52,7 +52,15 @@ html
                 | Buying and selling on the virtual marketplace has never been better! E-commerce transactions now have a new niche with the emergence and integration of the CratD2C Blockchain-based all-in-one marketplace that connects manufacturers directly to consumers.
                 |
                 | The CratD2C Blockchain Protocol serves as a medium for the most straightforward E-trade mechanism. Consumers connect directly to the manufacturers of their desired goods and services using the Blockchain distributed ledger technology with the state-of-the-art sales, purchase, and reward system.
-              img.ecommerce__img(src="./images/basket_money.png" alt="Basket money" width='683' height='578')
+              img.ecommerce__img(src="./images/basket_money.png" id='basket' alt="Basket money" width='683' height='578')
+              script.
+                const basket = document.getElementById('basket');
+                function updateScroll() {
+                  const scrollY = +window.pageYOffset / 7;
+                  console.log(scrollY / 7);
+                  basket.style.transform = `translateY(${scrollY}px`;
+                }
+                window.addEventListener('scroll', updateScroll);
           section.ecommerce__section.ecommerce__why
             div.container
               h2.ecommerce__title
