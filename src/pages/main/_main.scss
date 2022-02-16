@@ -13,10 +13,6 @@
     margin-bottom: 15px;
   }
 
-  &--title {
-    margin-bottom: 30px;
-  }
-
   &--description {
     margin-bottom: 15px;
   }
@@ -32,6 +28,23 @@
     border-radius: 20px;
   }
 
+  &--title {
+    margin-bottom: 50px;
+  }
+  &--subtitle {
+    font-family: "IBM", sans-serif;
+    color:var(--color-primary);
+
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 120%;
+    &-dot{
+      font-weight: 400;
+      color: #FFFFFF;
+    }
+    margin-bottom: 50px;
+  }
+
   @include for-desktop-sm {
     &--container {
       display: flex;
@@ -40,11 +53,6 @@
       flex-direction: column;
     }
 
-
-    &--title {
-      order: 1;
-      margin-bottom: 42px;
-    }
 
     &--img {
       width: 215px;
@@ -66,6 +74,16 @@
   @include for-desktop-big {
     &--bg {
       background-size: 100%;
+    }
+  }
+  @include for-desktop-sm-max{
+
+    &--title {
+      margin-bottom: 25px;
+    }
+    &--subtitle {
+      font-size: 20px;
+      margin-bottom: 30px;
     }
   }
 }
