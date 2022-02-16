@@ -66,9 +66,11 @@ mixin header(activeIndex)
         img.header-logo--img(src="./images/logo.svg" alt="Crat")
       nav.header-nav
         each tab, index in tabs
-          +dropdown(tab.name,tab.content,activeIndex,index)
+          -
+            var isActive=activeIndex === index;
+          +dropdown(tab.name,tab.content,isActive)
     div.container.header-mobile.header-content
-      input(id='menu__toggle' type='checkbox', (click)='changeBodyOverflow()')
+      input(id='menu__toggle' type='checkbox')
       label.menu__btn(for='menu__toggle')
         span
       a(href="/").header-logo

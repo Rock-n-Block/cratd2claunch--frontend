@@ -133,7 +133,7 @@
 .active{
   position: relative;
   z-index: 1;
-  &>*{
+  .dropdown-title{
     background: linear-gradient(118.88deg, #FFE39D -25.4%, #FFB700 84.89%);
 
     @include for-desktop-max{
