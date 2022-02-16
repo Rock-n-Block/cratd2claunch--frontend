@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "startDev": "gulp",
+    "start": "gulp",
     "build": "gulp build",
+    "heroku-postbuild": "gulp",
     "fontello": "bash ./fontello.sh"
   },
   "engines": {
